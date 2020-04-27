@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "My interactive chart",
+  "width": 800,
+  "height":500,
+  "data": {"url": "https://raw.githubusercontent.com/supanat61/Vega/master/MRT.csv"},
+ "transform": [{
+    "filter": {"field": "amount", "range": [0, 1000000000]}
+  }],
+  "selection": {
+    "pts": {
+      "type": "single"
+    }
+  },
+  "mark": "line",
+  "encoding": {
+    "x": {"timeUnit":"yearmonthday","field": "time", "type": "temporal"},
+    "y": {"field": "amount","type": "quantitative"},
+    "color": {
+      "condition": {
+        "selection": "pts",
+        "field": "station", "type": "nominal"
+      },
+      "value": "grey"
+    },
+    "tooltip": [{"field": "station", "type": "nominal"},
+                {"field": "amount", "type": "quantitative"}]
+  }
+}
