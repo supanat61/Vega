@@ -14,7 +14,7 @@
   },
   "mark": "line",
   "encoding": {
-    "x": {"timeUnit":"yearmonthday","field": "time", "type": "temporal"},
+    "x": {"timeUnit":"yearmonth","field": "time", "type": "temporal"},
     "y": {"field": "amount","type": "quantitative"},
     "color": {
       "condition": {
