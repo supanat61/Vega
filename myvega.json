@@ -3,7 +3,7 @@
   "description": "My interactive chart",
   "width": 800,
   "height":500,
-  "data": {"url": "https://raw.githubusercontent.com/supanat61/Vega/master/MRT.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/supanat61/Vega/master/MRT.csv"}, "title": "กราฟแสดงจำนวนผู้โดยสารรถไฟใต้ดินแต่ละสถานี",
  "transform": [{
     "filter": {"field": "amount", "range": [0, 1000000000]}
   }],
@@ -14,12 +14,12 @@
   },
   "mark": "line",
   "encoding": {
-    "x": {"timeUnit":"yearmonth","field": "time", "type": "temporal"},
-    "y": {"field": "amount","type": "quantitative"},
+    "x": {"timeUnit":"yearmonth","field": "time", "type": "temporal","title": "เดือน-ปี"},
+    "y": {"field": "amount","type": "quantitative","title": "จำนวนผู้ใช้บริการ (คน)"},
     "color": {
       "condition": {
         "selection": "pts",
-        "field": "station", "type": "nominal"
+        "field": "station", "type": "nominal","title": "สถานี"
       },
       "value": "grey"
     },
